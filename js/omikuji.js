@@ -5,6 +5,7 @@ window.addEventListener('devicemotion', motion);
 
 // カウント用
 var cnt = 0;
+const max_cnt = 100;
 
 // 加速度変化時
 function motion(event) {
@@ -30,5 +31,15 @@ function motion(event) {
     omikuji_img.style.transform = 'rotate(180deg)';
     cnt++;
   }
+
+  if (cnt >= max_cnt){
+    // 結果表示
+    result()
+  }
   //console.log(cnt)
+}
+
+// 結果表示用(書き換え)
+function result(){
+  $('txt').text("結果は...?")
 }
