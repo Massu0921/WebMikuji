@@ -32,7 +32,7 @@ function motion(event) {
     cnt++;
   }
 
-  if (cnt >= max_cnt){
+  if (cnt >= max_cnt) {
     // 結果表示
     result()
   }
@@ -40,6 +40,10 @@ function motion(event) {
 }
 
 // 結果表示用(書き換え)
-function result(){
+function result() {
   $('#txt').text("結果は...?")
+  omikuji_img.style.animate({
+    width: 0,
+    height: 0
+  }, 500);
 }
