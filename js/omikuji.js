@@ -42,7 +42,7 @@ function motion(event) {
 // 結果表示用(書き換え)
 function result() {
   $('#txt').text("結果は...?")
-  omikuji_img.style.animate({
+  $('#omikuji img').animate({
     width: 0,
     height: 0
   }, 500);
