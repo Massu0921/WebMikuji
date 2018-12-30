@@ -41,5 +41,5 @@ function motion(event) {
 
 // 結果表示用(書き換え)
 function result(){
-  $('txt').text("結果は...?")
+  $('#txt').text("結果は...?")
 }
