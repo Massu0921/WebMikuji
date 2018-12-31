@@ -49,7 +49,7 @@ function result() {
   $('#omikuji img').animate({ width: 0 }, 1000);
   setTimeout(function () {
     $('#omikuji img').remove();
-  }, 1000);
+  }, 1500);
   $('#result img').animate({ width: 0 + '%' }, 500).animate({ width: 70 + '%' }, 500).animate({ width: 50 + '%' }, 500);
 }
 
