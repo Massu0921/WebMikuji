@@ -52,7 +52,7 @@ function result() {
     $('#result img').animate({ width: 0 + '%' }, 500).animate({ width: 70 + '%' }, 500).animate({ width: 50 + '%' }, 500);
     setTimeout(function(){
       $('h3').fadeIn(1000);
-    });
+    },2000);
   }, 1000);
 }
 
@@ -61,5 +61,5 @@ $(window).on('load', function () {
   // ランダム数生成
   var num = Math.floor(Math.random() * 7);
   $('#omikuji').after('<div id="result"><img src="./images/' + String(num) + '.png" width="0%" alt="" class="mx-auto d-block"></div>');
-  $('#result').after('<h3 class="text-center m-4" style="display: none" href="/">ホームに戻る</h3>')
+  $('#result').after('<a href="/"><h3 class="text-center m-4" style="display: none">ホームに戻る</h3></a>')
 });
