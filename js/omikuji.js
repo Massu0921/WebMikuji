@@ -43,4 +43,10 @@ function motion(event) {
 function result() {
   $('#txt').text("結果は...?")
   $('#omikuji img').animate({width: 0,height: 0}, 500);
+  $('#omikuji img').remove()
+  // ランダム数生成
+  var num = Math.floor(Math.random() * 7);
+  $('#txt').append('<div id="result"><img src="./images/' + String(num) + '.png" width="0%" alt="" class="mx-auto d-block"></div>');
+  $('#result img').animate({ width: 70 + '%'}, 400);
+  $('#result img').animate({ width: 50 + '%' }, 400);
 }
