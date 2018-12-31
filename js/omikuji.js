@@ -5,7 +5,7 @@ window.addEventListener('devicemotion', motion);
 
 // カウント用
 var cnt = 0;
-const max_cnt = 100;
+const max_cnt = 50;
 
 // 加速度変化時
 function motion(event) {
@@ -32,7 +32,7 @@ function motion(event) {
     cnt++;
   }
 
-  if (cnt >= max_cnt) {
+  if (cnt == max_cnt) {
     // 結果表示
     result()
   }
