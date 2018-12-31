@@ -7,6 +7,9 @@ window.addEventListener('devicemotion', motion);
 var cnt = 0;
 const max_cnt = 50;
 
+// 多重起動防止用
+var flg = 1;
+
 // 加速度変化時
 function motion(event) {
 
@@ -32,9 +35,10 @@ function motion(event) {
     cnt++;
   }
 
-  if (cnt == max_cnt) {
+  if (cnt == max_cnt && flg) {
+    flg = 0;
     // 結果表示
-    result()
+    result();
   }
   //console.log(cnt)
 }
