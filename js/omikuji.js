@@ -44,8 +44,12 @@ function result() {
   $('#txt').text("結果は...?")
   $('#omikuji img').animate({ width: 0, height: 0 }, 1000);
   $('#omikuji img').remove()
-  // ランダム数生成
-  var num = Math.floor(Math.random() * 7);
-  $('#txt').append('<div id="result"><img src="./images/' + String(num) + '.png" width="0%" alt="" class="mx-auto d-block"></div>');
   $('#result img').animate({ width: 0 + '%' }, 500).animate({ width: 70 + '%' }, 500).animate({ width: 50 + '%' }, 500);
 }
+
+// 読み込み時に結果決定
+$(window).on('load', function () {
+  // ランダム数生成
+  var num = Math.floor(Math.random() * 7);
+  $('#omikuji').append('<div id="result"><img src="./images/' + String(num) + '.png" width="0%" alt="" class="mx-auto d-block"></div>');
+});
