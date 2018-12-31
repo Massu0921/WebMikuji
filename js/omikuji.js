@@ -7,9 +7,6 @@ window.addEventListener('devicemotion', motion);
 var cnt = 0;
 const max_cnt = 50;
 
-// 待機用
-var flg = 1;
-
 // 加速度変化時
 function motion(event) {
 
@@ -42,30 +39,13 @@ function motion(event) {
   //console.log(cnt)
 }
 
-// アニメーション待機用
-function comp() {
-  flg = 0;
-}
-
 // 結果表示用(書き換え)
 function result() {
   $('#txt').text("結果は...?")
-  $('#omikuji img').animate({ width: 0, height: 0 }, { duration: 1000 }, {complete: comp()});
-  while(flg){} //待機
-  flg = 1;
+  $('#omikuji img').animate({ width: 0, height: 0 }, 1000);
   $('#omikuji img').remove()
-  
   // ランダム数生成
   var num = Math.floor(Math.random() * 7);
-  // 画像配置
   $('#txt').append('<div id="result"><img src="./images/' + String(num) + '.png" width="0%" alt="" class="mx-auto d-block"></div>');
-
-
-  $('#result img').animate({ width: 0 + '%' }, { duration: 500 }, { complete: comp() });
-  while (flg) { } //待機
-  flg = 1;
-  $('#result img').animate({ width: 70 + '%' }, { duration: 500 }, { complete: comp() });
-  while (flg) { } //待機
-  flg = 1;
-  $('#result img').animate({ width: 50 + '%' }, { duration: 500 }, { complete: comp() });
+  $('#result img').animate({ width: 0 + '%' }, 500).animate({ width: 70 + '%' }, 500).animate({ width: 50 + '%' }, 500);
 }
