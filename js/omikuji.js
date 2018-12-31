@@ -42,7 +42,7 @@ function motion(event) {
 // 結果表示用(書き換え)
 function result() {
   $('#txt').text("結果は...?")
-  $('#omikuji img').animate({ width: 0, height: 0 }, 1000).remove();
+  $('#omikuji img').animate({ width: 0}, 1000).remove();
   $('#result img').animate({ width: 0 + '%' }, 500).animate({ width: 70 + '%' }, 500).animate({ width: 50 + '%' }, 500);
 }
 
@@ -50,5 +50,5 @@ function result() {
 $(window).on('load', function () {
   // ランダム数生成
   var num = Math.floor(Math.random() * 7);
-  $('#omikuji').append('<div id="result"><img src="./images/' + String(num) + '.png" width="0%" alt="" class="mx-auto d-block"></div>');
+  $('#omikuji').after('<div id="result"><img src="./images/' + String(num) + '.png" width="0%" alt="" class="mx-auto d-block"></div>');
 });
