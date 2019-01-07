@@ -35,11 +35,6 @@ function motion(event) {
     cnt++;
   }
 
-  // バイブ
-  if (window.navigator.vibrate) {
-    window.navigator.vibrate(50)
-  }
-
   if (cnt == max_cnt && flg) {
     flg = 0;
     // 結果表示
