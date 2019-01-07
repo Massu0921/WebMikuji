@@ -46,6 +46,7 @@ function motion(event) {
 // 結果表示用(書き換え)
 function result() {
   $('#txt').text("結果は...?")
+  window.navigator.vibrate(300)
   $('#omikuji img').animate({ width: 0 }, 1000);
   setTimeout(function () {
     $('#omikuji img').remove();
