@@ -3,6 +3,26 @@ const omikuji_img = document.querySelector('#omikuji img');
 // 加速度変化を監視
 window.addEventListener('devicemotion', motion);
 
+if (window.DeviceOrientationEvent) {
+  //  ユーザーにアクセスの許可を求める関数があったら（iOS13以降の対応）
+  if (DeviceOrientationEvent.requestPermission) {
+    $("#ac-permission").on("click", function () {
+      // 加速度センサーへのアクセス許可を申請する
+      DeviceOrientationEvent.requestPermission().then(function (response) {
+        // リクエストが許可されたら
+        if (response === "granted") {
+          // 傾きの変化を検知する「devicemotion」を使い、「acceleration()」を実行
+          $(window).on("devicemotion", motion);
+        }
+      });
+    });
+    // アクセスの許可を求める関数がなかったら
+  } else {
+    // 回転や傾きの変化を検知する「devicemotion」を使い、「acceleration()」を実行
+    $(window).on("devicemotion", motion);
+  }
+}
+
 // カウント用
 var cnt = 0;
 const max_cnt = 50;
