@@ -12,11 +12,9 @@ var flg = 1;
 
 // 加速度変化時
 function motion(event) {
-
   // 加速度取得
-  const x = event.acceleration.x;
-  const y = event.acceleration.y;
-  const z = event.acceleration.z;
+  var x = event.acceleration.x;
+  var y = event.acceleration.y;
 
   const bound = 7;
   // 上下のみカウント
