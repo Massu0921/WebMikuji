@@ -73,3 +73,8 @@ a:hover img {
     background: rgba(0, 0, 0, 0.3);
     /* 帯の透明度 */
 }
+
+#ac-permission-bt {
+    text-align: center;
+    margin-top: 20px;
+}
